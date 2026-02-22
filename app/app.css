@@ -3,13 +3,33 @@
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  /* GitHub Dark Mode Palette */
+  --color-gh-canvas:         #0d1117;
+  --color-gh-surface:        #161b22;
+  --color-gh-inset:          #21262d;
+  --color-gh-border:         #30363d;
+  --color-gh-border-muted:   #3d444d;
+  --color-gh-fg:             #e6edf3;
+  --color-gh-fg-muted:       #8b949e;
+  --color-gh-fg-subtle:      #636e7b;
+  --color-gh-accent:         #58a6ff;
+  --color-gh-accent-hover:   #388bfd;
+  --color-gh-success:        #3fb950;
+  --color-gh-tag-bg:         #388bfd1a;
+  --color-gh-tag-border:     #388bfd40;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 html,
 body {
-  @apply bg-white dark:bg-gray-950;
-
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
-  }
+  background-color: var(--color-gh-canvas);
+  color: var(--color-gh-fg);
+  min-height: 100vh;
+  color-scheme: dark;
 }
