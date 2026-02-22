@@ -51,6 +51,27 @@ export default function App() {
   );
 }
 
+export function HydrateFallback() {
+  return (
+    <>
+      <Navbar />
+      <main className="min-h-[calc(100vh-64px)] py-12 px-6">
+        <div className="max-w-3xl mx-auto">
+          <div className="h-8 w-32 rounded-md bg-gh-surface animate-pulse mb-8 pb-4 border-b border-gh-border" />
+          <div className="space-y-3">
+            {Array.from({ length: 3 }).map((_, i) => (
+              <div
+                key={i}
+                className="h-[72px] rounded-md border border-gh-border bg-gh-surface animate-pulse"
+              />
+            ))}
+          </div>
+        </div>
+      </main>
+    </>
+  );
+}
+
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   let message = "Oops!";
   let details = "An unexpected error occurred.";
